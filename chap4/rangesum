@@ -1,0 +1,33 @@
+function range(start, end) {
+  var res = [];
+  while (start <= end) {
+    res.push(start);
+    start +=1;
+  }
+  return res;
+}
+
+function sum(x) {
+  var i = 0;
+  var result = 0;
+  while(i < x.length) {
+    result += x[i];
+    i += 1;
+  }
+  return result;
+}
+
+function rangestep(start, end, step) {
+  var res = [];
+  if(step < 0)
+  while (start >= end) {
+    res.push(start);
+    start += step;
+  }
+  else
+    while (start <= end) {
+    res.push(start);
+    start += step;
+  }
+  return res;
+}

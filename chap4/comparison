@@ -1,0 +1,14 @@
+function deepEqual(x, y) {
+  if (x === y) return true;
+  if (x == null || y == null)
+    return false;
+  var a = 0, b = 0;
+  for (var p in x)
+    a += 1;
+  for (var p in y) {
+    b += 1;
+    if (!(p in x) || !deepEqual(x[p], y[p]))
+      return false;
+  }
+  return a == b;
+}

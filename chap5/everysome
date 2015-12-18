@@ -1,0 +1,18 @@
+function every(x, y) {
+  var i = 0;
+  while(i<x.length) {
+    if(!y(x[i]))
+      return false;
+    i += 1;
+  }
+  return true;
+}
+function some(x, y) {
+  var j = 0;
+  while(j<x.length) {
+    if(y(x[j]))
+       return true;
+       j += 1;
+  }
+  return false;
+}

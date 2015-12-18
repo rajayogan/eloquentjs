@@ -1,0 +1,6 @@
+console.log(average(ancestry.filter(function(x) {
+  if(byName[x.mother] != null)
+    return byName[x.mother]
+}).map(function(y) {
+  return y.born - byName[y.mother].born;
+})))

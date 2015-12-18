@@ -1,0 +1,29 @@
+function arrayToList(x) {
+  var counter = x.length - 1;
+  var l = null;
+  while (counter >= 0) {
+    l = {value: x[counter], rest: l};
+    counter -=1;
+  }
+  return l;
+}
+
+function listToArray(x) {
+  var arr = [];
+  for (var n = x; x; x = x.rest)
+    arr.push(x.value);
+  return arr;
+}
+
+function prepend(x, l) {
+  var list = null;
+  list = {value: x, rest: l};
+  return list;
+}
+
+function nth(l, i) {
+  if(i == 0) 
+    return l.value;
+  else
+    return nth(l.rest, i-1);
+}

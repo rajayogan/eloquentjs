@@ -1,0 +1,6 @@
+function min(firstNo,secNo) {
+  if (firstNo<secNo)
+    return firstNo;
+  else
+    return secNo;
+}

@@ -1,0 +1,25 @@
+function reverseArray(x) {
+  var i = x.length-1;
+  var newArr = [];
+  while(i >= 0) {
+    newArr.push(x[i]);
+    i -= 1;
+  }
+  return newArr;
+}
+
+function reverseArrayInPlace(x) {
+  var i = 0;
+  var ccount = x.length - 1;
+  if(x.length % 2 == 0)
+    var pos = x.length/2;
+  else
+    var pos = (x.length + 1)/2;
+  while (i < pos) {
+    var temp = x[ccount - i];
+    x[ccount - i] = x[i];
+    x[i]=temp;
+    i += 1;
+  }
+  return x;
+}
