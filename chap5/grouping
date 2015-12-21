@@ -1,0 +1,29 @@
+function average(array) {
+  function plus(a, b) { return a + b; }
+  return array.reduce(plus) / array.length;
+}
+
+function groupby(array, groupof){
+  var groups = {};
+  array.forEach(function(element){
+    var gname = groupof(element);
+    if(gname in groups)
+      groups[gname].push(element);
+    else
+      groups[gname] = [element];
+  });
+  return groups;
+}
+
+var centgroups = groupby(ancestry, function(person) {
+  return Math.ceil(person.died/100);
+});
+
+
+                         
+for(var cent in centgroups) {
+  var century = centgroups[cent].map(function(person){
+    return person.died - person.born;
+  });
+  console.log(cent + ':' + average(century));
+  }
